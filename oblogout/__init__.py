@@ -148,7 +148,7 @@ class OpenboxLogout():
             self.logger.debug("Rendering Fade")
             # Convert Pixbuf to PIL Image
             wh = (pb.get_width(),pb.get_height())
-            pilimg = Image.fromstring("RGB", wh, pb.get_pixels())
+            pilimg = Image.frombytes("RGB", wh, pb.get_pixels())
 
             pilimg = pilimg.point(lambda p: (p * self.opacity) / 255 )
 
